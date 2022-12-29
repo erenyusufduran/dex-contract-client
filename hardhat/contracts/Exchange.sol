@@ -53,10 +53,9 @@ contract Exchange is ERC20 {
         return liquidity;
     }
 
-    function removeLiquidity(uint256 _amount)
-        public
-        returns (uint256, uint256)
-    {
+    function removeLiquidity(
+        uint256 _amount
+    ) public returns (uint256, uint256) {
         require(_amount > 0, "Amount should be greater than zero");
         uint256 ethReserve = address(this).balance;
         uint256 _totalSupply = totalSupply();
